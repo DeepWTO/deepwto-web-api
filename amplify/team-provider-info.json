@@ -10,6 +10,11 @@
             "StackName": "amplify-deepwto-web-api-dev-154618",
             "StackId": "arn:aws:cloudformation:us-east-1:221262875767:stack/amplify-deepwto-web-api-dev-154618/58e32000-69ad-11ea-83a1-0a0faac5843d",
             "AmplifyAppId": "d33xeduqzt3jql"
+        },
+        "categories": {
+            "auth": {
+                "deepwtowebapi8b5358a0": {}
+            }
         }
     }
 }
