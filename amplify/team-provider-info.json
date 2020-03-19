@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-deepwto-web-api-dev-154618-authRole",
+            "UnauthRoleArn": "arn:aws:iam::221262875767:role/amplify-deepwto-web-api-dev-154618-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::221262875767:role/amplify-deepwto-web-api-dev-154618-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-deepwto-web-api-dev-154618-deployment",
+            "UnauthRoleName": "amplify-deepwto-web-api-dev-154618-unauthRole",
+            "StackName": "amplify-deepwto-web-api-dev-154618",
+            "StackId": "arn:aws:cloudformation:us-east-1:221262875767:stack/amplify-deepwto-web-api-dev-154618/58e32000-69ad-11ea-83a1-0a0faac5843d",
+            "AmplifyAppId": "d33xeduqzt3jql"
+        }
+    }
+}
