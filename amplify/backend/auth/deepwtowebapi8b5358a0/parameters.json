@@ -1,6 +1,6 @@
 {
     "identityPoolName": "deepwtowebapi8b5358a0_identitypool_8b5358a0",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "deepwt8b5358a0",
     "userPoolName": "deepwtowebapi8b5358a0_userpool_8b5358a0",
     "autoVerifiedAttributes": [
