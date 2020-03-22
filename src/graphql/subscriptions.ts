@@ -49,3 +49,24 @@ export const onDeleteInvokability = `subscription OnDeleteInvokability {
   }
 }
 `;
+export const onCreateInvokabilties = `subscription OnCreateInvokabilties {
+  onCreateInvokabilties {
+    ds
+    scores
+  }
+}
+`;
+export const onUpdateInvokabilties = `subscription OnUpdateInvokabilties {
+  onUpdateInvokabilties {
+    ds
+    scores
+  }
+}
+`;
+export const onDeleteInvokabilties = `subscription OnDeleteInvokabilties {
+  onDeleteInvokabilties {
+    ds
+    scores
+  }
+}
+`;

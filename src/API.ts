@@ -101,6 +101,27 @@ export type DeleteInvokabilityInput = {
   ds: number,
 };
 
+export type CreateInvokabiltiesInput = {
+  ds: number,
+  scores: string,
+};
+
+export type ModelInvokabiltiesConditionInput = {
+  scores?: ModelStringInput | null,
+  and?: Array< ModelInvokabiltiesConditionInput | null > | null,
+  or?: Array< ModelInvokabiltiesConditionInput | null > | null,
+  not?: ModelInvokabiltiesConditionInput | null,
+};
+
+export type UpdateInvokabiltiesInput = {
+  ds: number,
+  scores?: string | null,
+};
+
+export type DeleteInvokabiltiesInput = {
+  ds: number,
+};
+
 export type ModelGovGradCAMFilterInput = {
   ds_art?: ModelStringInput | null,
   image?: ModelStringInput | null,
@@ -144,6 +165,14 @@ export type ModelIntInput = {
   between?: Array< number | null > | null,
   attributeExists?: boolean | null,
   attributeType?: ModelAttributeTypes | null,
+};
+
+export type ModelInvokabiltiesFilterInput = {
+  ds?: ModelIntInput | null,
+  scores?: ModelStringInput | null,
+  and?: Array< ModelInvokabiltiesFilterInput | null > | null,
+  or?: Array< ModelInvokabiltiesFilterInput | null > | null,
+  not?: ModelInvokabiltiesFilterInput | null,
 };
 
 export type CreateGovGradCamMutationVariables = {
@@ -230,6 +259,45 @@ export type DeleteInvokabilityMutation = {
   } | null,
 };
 
+export type CreateInvokabiltiesMutationVariables = {
+  input: CreateInvokabiltiesInput,
+  condition?: ModelInvokabiltiesConditionInput | null,
+};
+
+export type CreateInvokabiltiesMutation = {
+  createInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
+  } | null,
+};
+
+export type UpdateInvokabiltiesMutationVariables = {
+  input: UpdateInvokabiltiesInput,
+  condition?: ModelInvokabiltiesConditionInput | null,
+};
+
+export type UpdateInvokabiltiesMutation = {
+  updateInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
+  } | null,
+};
+
+export type DeleteInvokabiltiesMutationVariables = {
+  input: DeleteInvokabiltiesInput,
+  condition?: ModelInvokabiltiesConditionInput | null,
+};
+
+export type DeleteInvokabiltiesMutation = {
+  deleteInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
+  } | null,
+};
+
 export type GetGovGradCamQueryVariables = {
   ds_art: string,
 };
@@ -300,6 +368,38 @@ export type ListInvokabilitysQuery = {
   } | null,
 };
 
+export type GetInvokabiltiesQueryVariables = {
+  ds: number,
+};
+
+export type GetInvokabiltiesQuery = {
+  getInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
+  } | null,
+};
+
+export type ListInvokabiltiessQueryVariables = {
+  ds?: number | null,
+  filter?: ModelInvokabiltiesFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListInvokabiltiessQuery = {
+  listInvokabiltiess:  {
+    __typename: "ModelInvokabiltiesConnection",
+    items:  Array< {
+      __typename: "Invokabilties",
+      ds: number,
+      scores: string,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
 export type OnCreateGovGradCamSubscription = {
   onCreateGovGradCAM:  {
     __typename: "GovGradCAM",
@@ -351,5 +451,29 @@ export type OnDeleteInvokabilitySubscription = {
     ds: number,
     art: string,
     score: number,
+  } | null,
+};
+
+export type OnCreateInvokabiltiesSubscription = {
+  onCreateInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
+  } | null,
+};
+
+export type OnUpdateInvokabiltiesSubscription = {
+  onUpdateInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
+  } | null,
+};
+
+export type OnDeleteInvokabiltiesSubscription = {
+  onDeleteInvokabilties:  {
+    __typename: "Invokabilties",
+    ds: number,
+    scores: string,
   } | null,
 };

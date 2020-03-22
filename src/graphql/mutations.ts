@@ -67,3 +67,33 @@ export const deleteInvokability = `mutation DeleteInvokability(
   }
 }
 `;
+export const createInvokabilties = `mutation CreateInvokabilties(
+  $input: CreateInvokabiltiesInput!
+  $condition: ModelInvokabiltiesConditionInput
+) {
+  createInvokabilties(input: $input, condition: $condition) {
+    ds
+    scores
+  }
+}
+`;
+export const updateInvokabilties = `mutation UpdateInvokabilties(
+  $input: UpdateInvokabiltiesInput!
+  $condition: ModelInvokabiltiesConditionInput
+) {
+  updateInvokabilties(input: $input, condition: $condition) {
+    ds
+    scores
+  }
+}
+`;
+export const deleteInvokabilties = `mutation DeleteInvokabilties(
+  $input: DeleteInvokabiltiesInput!
+  $condition: ModelInvokabiltiesConditionInput
+) {
+  deleteInvokabilties(input: $input, condition: $condition) {
+    ds
+    scores
+  }
+}
+`;

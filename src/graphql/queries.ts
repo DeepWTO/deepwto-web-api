@@ -65,3 +65,32 @@ export const listInvokabilitys = `query ListInvokabilitys(
   }
 }
 `;
+export const getInvokabilties = `query GetInvokabilties($ds: Int!) {
+  getInvokabilties(ds: $ds) {
+    ds
+    scores
+  }
+}
+`;
+export const listInvokabiltiess = `query ListInvokabiltiess(
+  $ds: Int
+  $filter: ModelInvokabiltiesFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listInvokabiltiess(
+    ds: $ds
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      ds
+      scores
+    }
+    nextToken
+  }
+}
+`;
