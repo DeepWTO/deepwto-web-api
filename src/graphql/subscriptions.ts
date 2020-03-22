@@ -22,3 +22,30 @@ export const onDeleteGovGradCam = `subscription OnDeleteGovGradCam {
   }
 }
 `;
+export const onCreateInvokability = `subscription OnCreateInvokability {
+  onCreateInvokability {
+    ds_art
+    ds
+    art
+    score
+  }
+}
+`;
+export const onUpdateInvokability = `subscription OnUpdateInvokability {
+  onUpdateInvokability {
+    ds_art
+    ds
+    art
+    score
+  }
+}
+`;
+export const onDeleteInvokability = `subscription OnDeleteInvokability {
+  onDeleteInvokability {
+    ds_art
+    ds
+    art
+    score
+  }
+}
+`;

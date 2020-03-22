@@ -30,3 +30,38 @@ export const listGovGradCaMs = `query ListGovGradCaMs(
   }
 }
 `;
+export const getInvokability = `query GetInvokability($ds_art: String!, $ds: Int!) {
+  getInvokability(ds_art: $ds_art, ds: $ds) {
+    ds_art
+    ds
+    art
+    score
+  }
+}
+`;
+export const listInvokabilitys = `query ListInvokabilitys(
+  $ds_art: String
+  $ds: ModelIntKeyConditionInput
+  $filter: ModelInvokabilityFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listInvokabilitys(
+    ds_art: $ds_art
+    ds: $ds
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      ds_art
+      ds
+      art
+      score
+    }
+    nextToken
+  }
+}
+`;
