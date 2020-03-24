@@ -22,50 +22,26 @@ export const onDeleteGovGradCam = `subscription OnDeleteGovGradCam {
   }
 }
 `;
-export const onCreateInvokability = `subscription OnCreateInvokability {
-  onCreateInvokability {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const onUpdateInvokability = `subscription OnUpdateInvokability {
-  onUpdateInvokability {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const onDeleteInvokability = `subscription OnDeleteInvokability {
-  onDeleteInvokability {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const onCreateInvokabilties = `subscription OnCreateInvokabilties {
-  onCreateInvokabilties {
-    ds
+export const onCreateInvokabilities = `subscription OnCreateInvokabilities {
+  onCreateInvokabilities {
+    ds_split
+    version
     scores
   }
 }
 `;
-export const onUpdateInvokabilties = `subscription OnUpdateInvokabilties {
-  onUpdateInvokabilties {
-    ds
+export const onUpdateInvokabilities = `subscription OnUpdateInvokabilities {
+  onUpdateInvokabilities {
+    ds_split
+    version
     scores
   }
 }
 `;
-export const onDeleteInvokabilties = `subscription OnDeleteInvokabilties {
-  onDeleteInvokabilties {
-    ds
+export const onDeleteInvokabilities = `subscription OnDeleteInvokabilities {
+  onDeleteInvokabilities {
+    ds_split
+    version
     scores
   }
 }

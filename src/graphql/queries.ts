@@ -30,64 +30,33 @@ export const listGovGradCaMs = `query ListGovGradCaMs(
   }
 }
 `;
-export const getInvokability = `query GetInvokability($ds_art: String!, $ds: Int!) {
-  getInvokability(ds_art: $ds_art, ds: $ds) {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const listInvokabilitys = `query ListInvokabilitys(
-  $ds_art: String
-  $ds: ModelIntKeyConditionInput
-  $filter: ModelInvokabilityFilterInput
-  $limit: Int
-  $nextToken: String
-  $sortDirection: ModelSortDirection
-) {
-  listInvokabilitys(
-    ds_art: $ds_art
-    ds: $ds
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
-    items {
-      ds_art
-      ds
-      art
-      score
-    }
-    nextToken
-  }
-}
-`;
-export const getInvokabilties = `query GetInvokabilties($ds: Int!) {
-  getInvokabilties(ds: $ds) {
-    ds
+export const getInvokabilities = `query GetInvokabilities($ds_split: String!, $version: String!) {
+  getInvokabilities(ds_split: $ds_split, version: $version) {
+    ds_split
+    version
     scores
   }
 }
 `;
-export const listInvokabiltiess = `query ListInvokabiltiess(
-  $ds: Int
-  $filter: ModelInvokabiltiesFilterInput
+export const listInvokabilitiess = `query ListInvokabilitiess(
+  $ds_split: String
+  $version: ModelStringKeyConditionInput
+  $filter: ModelInvokabilitiesFilterInput
   $limit: Int
   $nextToken: String
   $sortDirection: ModelSortDirection
 ) {
-  listInvokabiltiess(
-    ds: $ds
+  listInvokabilitiess(
+    ds_split: $ds_split
+    version: $version
     filter: $filter
     limit: $limit
     nextToken: $nextToken
     sortDirection: $sortDirection
   ) {
     items {
-      ds
+      ds_split
+      version
       scores
     }
     nextToken

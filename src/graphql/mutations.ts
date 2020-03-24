@@ -31,68 +31,35 @@ export const deleteGovGradCam = `mutation DeleteGovGradCam(
   }
 }
 `;
-export const createInvokability = `mutation CreateInvokability(
-  $input: CreateInvokabilityInput!
-  $condition: ModelInvokabilityConditionInput
+export const createInvokabilities = `mutation CreateInvokabilities(
+  $input: CreateInvokabilitiesInput!
+  $condition: ModelInvokabilitiesConditionInput
 ) {
-  createInvokability(input: $input, condition: $condition) {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const updateInvokability = `mutation UpdateInvokability(
-  $input: UpdateInvokabilityInput!
-  $condition: ModelInvokabilityConditionInput
-) {
-  updateInvokability(input: $input, condition: $condition) {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const deleteInvokability = `mutation DeleteInvokability(
-  $input: DeleteInvokabilityInput!
-  $condition: ModelInvokabilityConditionInput
-) {
-  deleteInvokability(input: $input, condition: $condition) {
-    ds_art
-    ds
-    art
-    score
-  }
-}
-`;
-export const createInvokabilties = `mutation CreateInvokabilties(
-  $input: CreateInvokabiltiesInput!
-  $condition: ModelInvokabiltiesConditionInput
-) {
-  createInvokabilties(input: $input, condition: $condition) {
-    ds
+  createInvokabilities(input: $input, condition: $condition) {
+    ds_split
+    version
     scores
   }
 }
 `;
-export const updateInvokabilties = `mutation UpdateInvokabilties(
-  $input: UpdateInvokabiltiesInput!
-  $condition: ModelInvokabiltiesConditionInput
+export const updateInvokabilities = `mutation UpdateInvokabilities(
+  $input: UpdateInvokabilitiesInput!
+  $condition: ModelInvokabilitiesConditionInput
 ) {
-  updateInvokabilties(input: $input, condition: $condition) {
-    ds
+  updateInvokabilities(input: $input, condition: $condition) {
+    ds_split
+    version
     scores
   }
 }
 `;
-export const deleteInvokabilties = `mutation DeleteInvokabilties(
-  $input: DeleteInvokabiltiesInput!
-  $condition: ModelInvokabiltiesConditionInput
+export const deleteInvokabilities = `mutation DeleteInvokabilities(
+  $input: DeleteInvokabilitiesInput!
+  $condition: ModelInvokabilitiesConditionInput
 ) {
-  deleteInvokabilties(input: $input, condition: $condition) {
-    ds
+  deleteInvokabilities(input: $input, condition: $condition) {
+    ds_split
+    version
     scores
   }
 }
