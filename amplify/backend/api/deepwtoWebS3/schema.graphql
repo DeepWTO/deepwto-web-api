@@ -10,5 +10,5 @@ type Invokabilities
   @key(fields: ["ds_split", "version"]) { # this field list allocate ds as an partition-key and version as the sort-key. # note that we can allocate multiple sort-key-varaint over one-partition key
   ds_split: String!
   version: String!
-  scores: AWSJSON!
+  scores: String!
 }
