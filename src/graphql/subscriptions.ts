@@ -46,3 +46,27 @@ export const onDeleteInvokabilities = `subscription OnDeleteInvokabilities {
   }
 }
 `;
+export const onCreateGovTokenized = `subscription OnCreateGovTokenized {
+  onCreateGovTokenized {
+    ds
+    version
+    tokens
+  }
+}
+`;
+export const onUpdateGovTokenized = `subscription OnUpdateGovTokenized {
+  onUpdateGovTokenized {
+    ds
+    version
+    tokens
+  }
+}
+`;
+export const onDeleteGovTokenized = `subscription OnDeleteGovTokenized {
+  onDeleteGovTokenized {
+    ds
+    version
+    tokens
+  }
+}
+`;

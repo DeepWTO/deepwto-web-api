@@ -63,3 +63,36 @@ export const listInvokabilitiess = `query ListInvokabilitiess(
   }
 }
 `;
+export const getGovTokenized = `query GetGovTokenized($ds: Int!, $version: String!) {
+  getGovTokenized(ds: $ds, version: $version) {
+    ds
+    version
+    tokens
+  }
+}
+`;
+export const listGovTokenizeds = `query ListGovTokenizeds(
+  $ds: Int
+  $version: ModelStringKeyConditionInput
+  $filter: ModelGovTokenizedFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listGovTokenizeds(
+    ds: $ds
+    version: $version
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      ds
+      version
+      tokens
+    }
+    nextToken
+  }
+}
+`;

@@ -86,6 +86,30 @@ export type DeleteInvokabilitiesInput = {
   version: string,
 };
 
+export type CreateGovTokenizedInput = {
+  ds: number,
+  version: string,
+  tokens: Array< string | null >,
+};
+
+export type ModelGovTokenizedConditionInput = {
+  tokens?: ModelStringInput | null,
+  and?: Array< ModelGovTokenizedConditionInput | null > | null,
+  or?: Array< ModelGovTokenizedConditionInput | null > | null,
+  not?: ModelGovTokenizedConditionInput | null,
+};
+
+export type UpdateGovTokenizedInput = {
+  ds: number,
+  version: string,
+  tokens?: Array< string | null > | null,
+};
+
+export type DeleteGovTokenizedInput = {
+  ds: number,
+  version: string,
+};
+
 export type ModelGovGradCAMFilterInput = {
   ds_art?: ModelStringInput | null,
   image?: ModelStringInput | null,
@@ -117,6 +141,27 @@ export type ModelInvokabilitiesFilterInput = {
   and?: Array< ModelInvokabilitiesFilterInput | null > | null,
   or?: Array< ModelInvokabilitiesFilterInput | null > | null,
   not?: ModelInvokabilitiesFilterInput | null,
+};
+
+export type ModelGovTokenizedFilterInput = {
+  ds?: ModelIntInput | null,
+  version?: ModelStringInput | null,
+  tokens?: ModelStringInput | null,
+  and?: Array< ModelGovTokenizedFilterInput | null > | null,
+  or?: Array< ModelGovTokenizedFilterInput | null > | null,
+  not?: ModelGovTokenizedFilterInput | null,
+};
+
+export type ModelIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
 };
 
 export type CreateGovGradCamMutationVariables = {
@@ -200,6 +245,48 @@ export type DeleteInvokabilitiesMutation = {
   } | null,
 };
 
+export type CreateGovTokenizedMutationVariables = {
+  input: CreateGovTokenizedInput,
+  condition?: ModelGovTokenizedConditionInput | null,
+};
+
+export type CreateGovTokenizedMutation = {
+  createGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type UpdateGovTokenizedMutationVariables = {
+  input: UpdateGovTokenizedInput,
+  condition?: ModelGovTokenizedConditionInput | null,
+};
+
+export type UpdateGovTokenizedMutation = {
+  updateGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type DeleteGovTokenizedMutationVariables = {
+  input: DeleteGovTokenizedInput,
+  condition?: ModelGovTokenizedConditionInput | null,
+};
+
+export type DeleteGovTokenizedMutation = {
+  deleteGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
 export type GetGovGradCamQueryVariables = {
   ds_art: string,
 };
@@ -268,6 +355,42 @@ export type ListInvokabilitiessQuery = {
   } | null,
 };
 
+export type GetGovTokenizedQueryVariables = {
+  ds: number,
+  version: string,
+};
+
+export type GetGovTokenizedQuery = {
+  getGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type ListGovTokenizedsQueryVariables = {
+  ds?: number | null,
+  version?: ModelStringKeyConditionInput | null,
+  filter?: ModelGovTokenizedFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListGovTokenizedsQuery = {
+  listGovTokenizeds:  {
+    __typename: "ModelGovTokenizedConnection",
+    items:  Array< {
+      __typename: "GovTokenized",
+      ds: number,
+      version: string,
+      tokens: Array< string | null >,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
 export type OnCreateGovGradCamSubscription = {
   onCreateGovGradCAM:  {
     __typename: "GovGradCAM",
@@ -316,5 +439,32 @@ export type OnDeleteInvokabilitiesSubscription = {
     ds_split: string,
     version: string,
     scores: string,
+  } | null,
+};
+
+export type OnCreateGovTokenizedSubscription = {
+  onCreateGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type OnUpdateGovTokenizedSubscription = {
+  onUpdateGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type OnDeleteGovTokenizedSubscription = {
+  onDeleteGovTokenized:  {
+    __typename: "GovTokenized",
+    ds: number,
+    version: string,
+    tokens: Array< string | null >,
   } | null,
 };

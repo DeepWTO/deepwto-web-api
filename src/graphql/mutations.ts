@@ -64,3 +64,36 @@ export const deleteInvokabilities = `mutation DeleteInvokabilities(
   }
 }
 `;
+export const createGovTokenized = `mutation CreateGovTokenized(
+  $input: CreateGovTokenizedInput!
+  $condition: ModelGovTokenizedConditionInput
+) {
+  createGovTokenized(input: $input, condition: $condition) {
+    ds
+    version
+    tokens
+  }
+}
+`;
+export const updateGovTokenized = `mutation UpdateGovTokenized(
+  $input: UpdateGovTokenizedInput!
+  $condition: ModelGovTokenizedConditionInput
+) {
+  updateGovTokenized(input: $input, condition: $condition) {
+    ds
+    version
+    tokens
+  }
+}
+`;
+export const deleteGovTokenized = `mutation DeleteGovTokenized(
+  $input: DeleteGovTokenizedInput!
+  $condition: ModelGovTokenizedConditionInput
+) {
+  deleteGovTokenized(input: $input, condition: $condition) {
+    ds
+    version
+    tokens
+  }
+}
+`;
