@@ -1,10 +1,3 @@
-type GovGradCAM
-  @model
-  @key(fields: ["ds_art"]) { # this field list allocate ds as an partition-key and version as the sort-key. # note that we can allocate multiple sort-key-varaint over one-partition key
-  ds_art: String!
-  image: [String]
-}
-
 type Invokabilities
   @model
   @key(fields: ["ds_split", "version"]) { # this field list allocate ds as an partition-key and version as the sort-key. # note that we can allocate multiple sort-key-varaint over one-partition key
@@ -36,4 +29,3 @@ type GovGradCAM
 #   version: String!
 #   tokens: [String]!
 # }
-  

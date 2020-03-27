@@ -1,16 +1,17 @@
 /* tslint:disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateGovGradCAMInput = {
-  ds_art: string,
-  image?: Array< string | null > | null,
+export type CreateInvokabilitiesInput = {
+  ds_split: string,
+  version: string,
+  scores: string,
 };
 
-export type ModelGovGradCAMConditionInput = {
-  image?: ModelStringInput | null,
-  and?: Array< ModelGovGradCAMConditionInput | null > | null,
-  or?: Array< ModelGovGradCAMConditionInput | null > | null,
-  not?: ModelGovGradCAMConditionInput | null,
+export type ModelInvokabilitiesConditionInput = {
+  scores?: ModelStringInput | null,
+  and?: Array< ModelInvokabilitiesConditionInput | null > | null,
+  or?: Array< ModelInvokabilitiesConditionInput | null > | null,
+  not?: ModelInvokabilitiesConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -53,28 +54,6 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type UpdateGovGradCAMInput = {
-  ds_art: string,
-  image?: Array< string | null > | null,
-};
-
-export type DeleteGovGradCAMInput = {
-  ds_art: string,
-};
-
-export type CreateInvokabilitiesInput = {
-  ds_split: string,
-  version: string,
-  scores: string,
-};
-
-export type ModelInvokabilitiesConditionInput = {
-  scores?: ModelStringInput | null,
-  and?: Array< ModelInvokabilitiesConditionInput | null > | null,
-  or?: Array< ModelInvokabilitiesConditionInput | null > | null,
-  not?: ModelInvokabilitiesConditionInput | null,
-};
-
 export type UpdateInvokabilitiesInput = {
   ds_split: string,
   version: string,
@@ -110,19 +89,41 @@ export type DeleteGovTokenizedInput = {
   version: string,
 };
 
-export type ModelGovGradCAMFilterInput = {
-  ds_art?: ModelStringInput | null,
-  image?: ModelStringInput | null,
-  and?: Array< ModelGovGradCAMFilterInput | null > | null,
-  or?: Array< ModelGovGradCAMFilterInput | null > | null,
-  not?: ModelGovGradCAMFilterInput | null,
+export type CreateGovGradCAMInput = {
+  ds_art: string,
+  version: string,
+  weights: Array< number | null >,
 };
 
-export enum ModelSortDirection {
-  ASC = "ASC",
-  DESC = "DESC",
-}
+export type ModelGovGradCAMConditionInput = {
+  weights?: ModelFloatInput | null,
+  and?: Array< ModelGovGradCAMConditionInput | null > | null,
+  or?: Array< ModelGovGradCAMConditionInput | null > | null,
+  not?: ModelGovGradCAMConditionInput | null,
+};
 
+export type ModelFloatInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type UpdateGovGradCAMInput = {
+  ds_art: string,
+  version: string,
+  weights?: Array< number | null > | null,
+};
+
+export type DeleteGovGradCAMInput = {
+  ds_art: string,
+  version: string,
+};
 
 export type ModelStringKeyConditionInput = {
   eq?: string | null,
@@ -142,6 +143,12 @@ export type ModelInvokabilitiesFilterInput = {
   or?: Array< ModelInvokabilitiesFilterInput | null > | null,
   not?: ModelInvokabilitiesFilterInput | null,
 };
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
 
 export type ModelGovTokenizedFilterInput = {
   ds?: ModelIntInput | null,
@@ -164,43 +171,13 @@ export type ModelIntInput = {
   attributeType?: ModelAttributeTypes | null,
 };
 
-export type CreateGovGradCamMutationVariables = {
-  input: CreateGovGradCAMInput,
-  condition?: ModelGovGradCAMConditionInput | null,
-};
-
-export type CreateGovGradCamMutation = {
-  createGovGradCAM:  {
-    __typename: "GovGradCAM",
-    ds_art: string,
-    image: Array< string | null > | null,
-  } | null,
-};
-
-export type UpdateGovGradCamMutationVariables = {
-  input: UpdateGovGradCAMInput,
-  condition?: ModelGovGradCAMConditionInput | null,
-};
-
-export type UpdateGovGradCamMutation = {
-  updateGovGradCAM:  {
-    __typename: "GovGradCAM",
-    ds_art: string,
-    image: Array< string | null > | null,
-  } | null,
-};
-
-export type DeleteGovGradCamMutationVariables = {
-  input: DeleteGovGradCAMInput,
-  condition?: ModelGovGradCAMConditionInput | null,
-};
-
-export type DeleteGovGradCamMutation = {
-  deleteGovGradCAM:  {
-    __typename: "GovGradCAM",
-    ds_art: string,
-    image: Array< string | null > | null,
-  } | null,
+export type ModelGovGradCAMFilterInput = {
+  ds_art?: ModelStringInput | null,
+  version?: ModelStringInput | null,
+  weights?: ModelFloatInput | null,
+  and?: Array< ModelGovGradCAMFilterInput | null > | null,
+  or?: Array< ModelGovGradCAMFilterInput | null > | null,
+  not?: ModelGovGradCAMFilterInput | null,
 };
 
 export type CreateInvokabilitiesMutationVariables = {
@@ -287,35 +264,45 @@ export type DeleteGovTokenizedMutation = {
   } | null,
 };
 
-export type GetGovGradCamQueryVariables = {
-  ds_art: string,
+export type CreateGovGradCamMutationVariables = {
+  input: CreateGovGradCAMInput,
+  condition?: ModelGovGradCAMConditionInput | null,
 };
 
-export type GetGovGradCamQuery = {
-  getGovGradCAM:  {
+export type CreateGovGradCamMutation = {
+  createGovGradCAM:  {
     __typename: "GovGradCAM",
     ds_art: string,
-    image: Array< string | null > | null,
+    version: string,
+    weights: Array< number | null >,
   } | null,
 };
 
-export type ListGovGradCaMsQueryVariables = {
-  ds_art?: string | null,
-  filter?: ModelGovGradCAMFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
+export type UpdateGovGradCamMutationVariables = {
+  input: UpdateGovGradCAMInput,
+  condition?: ModelGovGradCAMConditionInput | null,
 };
 
-export type ListGovGradCaMsQuery = {
-  listGovGradCAMs:  {
-    __typename: "ModelGovGradCAMConnection",
-    items:  Array< {
-      __typename: "GovGradCAM",
-      ds_art: string,
-      image: Array< string | null > | null,
-    } | null > | null,
-    nextToken: string | null,
+export type UpdateGovGradCamMutation = {
+  updateGovGradCAM:  {
+    __typename: "GovGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type DeleteGovGradCamMutationVariables = {
+  input: DeleteGovGradCAMInput,
+  condition?: ModelGovGradCAMConditionInput | null,
+};
+
+export type DeleteGovGradCamMutation = {
+  deleteGovGradCAM:  {
+    __typename: "GovGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
   } | null,
 };
 
@@ -391,27 +378,39 @@ export type ListGovTokenizedsQuery = {
   } | null,
 };
 
-export type OnCreateGovGradCamSubscription = {
-  onCreateGovGradCAM:  {
+export type GetGovGradCamQueryVariables = {
+  ds_art: string,
+  version: string,
+};
+
+export type GetGovGradCamQuery = {
+  getGovGradCAM:  {
     __typename: "GovGradCAM",
     ds_art: string,
-    image: Array< string | null > | null,
+    version: string,
+    weights: Array< number | null >,
   } | null,
 };
 
-export type OnUpdateGovGradCamSubscription = {
-  onUpdateGovGradCAM:  {
-    __typename: "GovGradCAM",
-    ds_art: string,
-    image: Array< string | null > | null,
-  } | null,
+export type ListGovGradCaMsQueryVariables = {
+  ds_art?: string | null,
+  version?: ModelStringKeyConditionInput | null,
+  filter?: ModelGovGradCAMFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
 };
 
-export type OnDeleteGovGradCamSubscription = {
-  onDeleteGovGradCAM:  {
-    __typename: "GovGradCAM",
-    ds_art: string,
-    image: Array< string | null > | null,
+export type ListGovGradCaMsQuery = {
+  listGovGradCAMs:  {
+    __typename: "ModelGovGradCAMConnection",
+    items:  Array< {
+      __typename: "GovGradCAM",
+      ds_art: string,
+      version: string,
+      weights: Array< number | null >,
+    } | null > | null,
+    nextToken: string | null,
   } | null,
 };
 
@@ -466,5 +465,32 @@ export type OnDeleteGovTokenizedSubscription = {
     ds: number,
     version: string,
     tokens: Array< string | null >,
+  } | null,
+};
+
+export type OnCreateGovGradCamSubscription = {
+  onCreateGovGradCAM:  {
+    __typename: "GovGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type OnUpdateGovGradCamSubscription = {
+  onUpdateGovGradCAM:  {
+    __typename: "GovGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type OnDeleteGovGradCamSubscription = {
+  onDeleteGovGradCAM:  {
+    __typename: "GovGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
   } | null,
 };
