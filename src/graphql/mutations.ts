@@ -100,3 +100,69 @@ export const deleteGovGradCam = `mutation DeleteGovGradCam(
   }
 }
 `;
+export const createArticleTokenized = `mutation CreateArticleTokenized(
+  $input: CreateArticleTokenizedInput!
+  $condition: ModelArticleTokenizedConditionInput
+) {
+  createArticleTokenized(input: $input, condition: $condition) {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const updateArticleTokenized = `mutation UpdateArticleTokenized(
+  $input: UpdateArticleTokenizedInput!
+  $condition: ModelArticleTokenizedConditionInput
+) {
+  updateArticleTokenized(input: $input, condition: $condition) {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const deleteArticleTokenized = `mutation DeleteArticleTokenized(
+  $input: DeleteArticleTokenizedInput!
+  $condition: ModelArticleTokenizedConditionInput
+) {
+  deleteArticleTokenized(input: $input, condition: $condition) {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const createArticleGradCam = `mutation CreateArticleGradCam(
+  $input: CreateArticleGradCAMInput!
+  $condition: ModelArticleGradCAMConditionInput
+) {
+  createArticleGradCAM(input: $input, condition: $condition) {
+    ds_art
+    version
+    weights
+  }
+}
+`;
+export const updateArticleGradCam = `mutation UpdateArticleGradCam(
+  $input: UpdateArticleGradCAMInput!
+  $condition: ModelArticleGradCAMConditionInput
+) {
+  updateArticleGradCAM(input: $input, condition: $condition) {
+    ds_art
+    version
+    weights
+  }
+}
+`;
+export const deleteArticleGradCam = `mutation DeleteArticleGradCam(
+  $input: DeleteArticleGradCAMInput!
+  $condition: ModelArticleGradCAMConditionInput
+) {
+  deleteArticleGradCAM(input: $input, condition: $condition) {
+    ds_art
+    version
+    weights
+  }
+}
+`;

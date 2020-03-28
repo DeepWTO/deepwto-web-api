@@ -73,3 +73,51 @@ export const onDeleteGovGradCam = `subscription OnDeleteGovGradCam {
   }
 }
 `;
+export const onCreateArticleTokenized = `subscription OnCreateArticleTokenized {
+  onCreateArticleTokenized {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const onUpdateArticleTokenized = `subscription OnUpdateArticleTokenized {
+  onUpdateArticleTokenized {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const onDeleteArticleTokenized = `subscription OnDeleteArticleTokenized {
+  onDeleteArticleTokenized {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const onCreateArticleGradCam = `subscription OnCreateArticleGradCam {
+  onCreateArticleGradCAM {
+    ds_art
+    version
+    weights
+  }
+}
+`;
+export const onUpdateArticleGradCam = `subscription OnUpdateArticleGradCam {
+  onUpdateArticleGradCAM {
+    ds_art
+    version
+    weights
+  }
+}
+`;
+export const onDeleteArticleGradCam = `subscription OnDeleteArticleGradCam {
+  onDeleteArticleGradCAM {
+    ds_art
+    version
+    weights
+  }
+}
+`;

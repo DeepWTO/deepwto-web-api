@@ -125,6 +125,54 @@ export type DeleteGovGradCAMInput = {
   version: string,
 };
 
+export type CreateArticleTokenizedInput = {
+  article: string,
+  version: string,
+  tokens: Array< string | null >,
+};
+
+export type ModelArticleTokenizedConditionInput = {
+  tokens?: ModelStringInput | null,
+  and?: Array< ModelArticleTokenizedConditionInput | null > | null,
+  or?: Array< ModelArticleTokenizedConditionInput | null > | null,
+  not?: ModelArticleTokenizedConditionInput | null,
+};
+
+export type UpdateArticleTokenizedInput = {
+  article: string,
+  version: string,
+  tokens?: Array< string | null > | null,
+};
+
+export type DeleteArticleTokenizedInput = {
+  article: string,
+  version: string,
+};
+
+export type CreateArticleGradCAMInput = {
+  ds_art: string,
+  version: string,
+  weights: Array< number | null >,
+};
+
+export type ModelArticleGradCAMConditionInput = {
+  weights?: ModelFloatInput | null,
+  and?: Array< ModelArticleGradCAMConditionInput | null > | null,
+  or?: Array< ModelArticleGradCAMConditionInput | null > | null,
+  not?: ModelArticleGradCAMConditionInput | null,
+};
+
+export type UpdateArticleGradCAMInput = {
+  ds_art: string,
+  version: string,
+  weights?: Array< number | null > | null,
+};
+
+export type DeleteArticleGradCAMInput = {
+  ds_art: string,
+  version: string,
+};
+
 export type ModelStringKeyConditionInput = {
   eq?: string | null,
   le?: string | null,
@@ -178,6 +226,24 @@ export type ModelGovGradCAMFilterInput = {
   and?: Array< ModelGovGradCAMFilterInput | null > | null,
   or?: Array< ModelGovGradCAMFilterInput | null > | null,
   not?: ModelGovGradCAMFilterInput | null,
+};
+
+export type ModelArticleTokenizedFilterInput = {
+  article?: ModelStringInput | null,
+  version?: ModelStringInput | null,
+  tokens?: ModelStringInput | null,
+  and?: Array< ModelArticleTokenizedFilterInput | null > | null,
+  or?: Array< ModelArticleTokenizedFilterInput | null > | null,
+  not?: ModelArticleTokenizedFilterInput | null,
+};
+
+export type ModelArticleGradCAMFilterInput = {
+  ds_art?: ModelStringInput | null,
+  version?: ModelStringInput | null,
+  weights?: ModelFloatInput | null,
+  and?: Array< ModelArticleGradCAMFilterInput | null > | null,
+  or?: Array< ModelArticleGradCAMFilterInput | null > | null,
+  not?: ModelArticleGradCAMFilterInput | null,
 };
 
 export type CreateInvokabilitiesMutationVariables = {
@@ -306,6 +372,90 @@ export type DeleteGovGradCamMutation = {
   } | null,
 };
 
+export type CreateArticleTokenizedMutationVariables = {
+  input: CreateArticleTokenizedInput,
+  condition?: ModelArticleTokenizedConditionInput | null,
+};
+
+export type CreateArticleTokenizedMutation = {
+  createArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type UpdateArticleTokenizedMutationVariables = {
+  input: UpdateArticleTokenizedInput,
+  condition?: ModelArticleTokenizedConditionInput | null,
+};
+
+export type UpdateArticleTokenizedMutation = {
+  updateArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type DeleteArticleTokenizedMutationVariables = {
+  input: DeleteArticleTokenizedInput,
+  condition?: ModelArticleTokenizedConditionInput | null,
+};
+
+export type DeleteArticleTokenizedMutation = {
+  deleteArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type CreateArticleGradCamMutationVariables = {
+  input: CreateArticleGradCAMInput,
+  condition?: ModelArticleGradCAMConditionInput | null,
+};
+
+export type CreateArticleGradCamMutation = {
+  createArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type UpdateArticleGradCamMutationVariables = {
+  input: UpdateArticleGradCAMInput,
+  condition?: ModelArticleGradCAMConditionInput | null,
+};
+
+export type UpdateArticleGradCamMutation = {
+  updateArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type DeleteArticleGradCamMutationVariables = {
+  input: DeleteArticleGradCAMInput,
+  condition?: ModelArticleGradCAMConditionInput | null,
+};
+
+export type DeleteArticleGradCamMutation = {
+  deleteArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
 export type GetInvokabilitiesQueryVariables = {
   ds_split: string,
   version: string,
@@ -414,6 +564,78 @@ export type ListGovGradCaMsQuery = {
   } | null,
 };
 
+export type GetArticleTokenizedQueryVariables = {
+  article: string,
+  version: string,
+};
+
+export type GetArticleTokenizedQuery = {
+  getArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type ListArticleTokenizedsQueryVariables = {
+  article?: string | null,
+  version?: ModelStringKeyConditionInput | null,
+  filter?: ModelArticleTokenizedFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListArticleTokenizedsQuery = {
+  listArticleTokenizeds:  {
+    __typename: "ModelArticleTokenizedConnection",
+    items:  Array< {
+      __typename: "ArticleTokenized",
+      article: string,
+      version: string,
+      tokens: Array< string | null >,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
+export type GetArticleGradCamQueryVariables = {
+  ds_art: string,
+  version: string,
+};
+
+export type GetArticleGradCamQuery = {
+  getArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type ListArticleGradCaMsQueryVariables = {
+  ds_art?: string | null,
+  version?: ModelStringKeyConditionInput | null,
+  filter?: ModelArticleGradCAMFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListArticleGradCaMsQuery = {
+  listArticleGradCAMs:  {
+    __typename: "ModelArticleGradCAMConnection",
+    items:  Array< {
+      __typename: "ArticleGradCAM",
+      ds_art: string,
+      version: string,
+      weights: Array< number | null >,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
 export type OnCreateInvokabilitiesSubscription = {
   onCreateInvokabilities:  {
     __typename: "Invokabilities",
@@ -489,6 +711,60 @@ export type OnUpdateGovGradCamSubscription = {
 export type OnDeleteGovGradCamSubscription = {
   onDeleteGovGradCAM:  {
     __typename: "GovGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type OnCreateArticleTokenizedSubscription = {
+  onCreateArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type OnUpdateArticleTokenizedSubscription = {
+  onUpdateArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type OnDeleteArticleTokenizedSubscription = {
+  onDeleteArticleTokenized:  {
+    __typename: "ArticleTokenized",
+    article: string,
+    version: string,
+    tokens: Array< string | null >,
+  } | null,
+};
+
+export type OnCreateArticleGradCamSubscription = {
+  onCreateArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type OnUpdateArticleGradCamSubscription = {
+  onUpdateArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
+    ds_art: string,
+    version: string,
+    weights: Array< number | null >,
+  } | null,
+};
+
+export type OnDeleteArticleGradCamSubscription = {
+  onDeleteArticleGradCAM:  {
+    __typename: "ArticleGradCAM",
     ds_art: string,
     version: string,
     weights: Array< number | null >,

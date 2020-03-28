@@ -100,3 +100,69 @@ export const listGovGradCaMs = `query ListGovGradCaMs(
   }
 }
 `;
+export const getArticleTokenized = `query GetArticleTokenized($article: String!, $version: String!) {
+  getArticleTokenized(article: $article, version: $version) {
+    article
+    version
+    tokens
+  }
+}
+`;
+export const listArticleTokenizeds = `query ListArticleTokenizeds(
+  $article: String
+  $version: ModelStringKeyConditionInput
+  $filter: ModelArticleTokenizedFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listArticleTokenizeds(
+    article: $article
+    version: $version
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      article
+      version
+      tokens
+    }
+    nextToken
+  }
+}
+`;
+export const getArticleGradCam = `query GetArticleGradCam($ds_art: String!, $version: String!) {
+  getArticleGradCAM(ds_art: $ds_art, version: $version) {
+    ds_art
+    version
+    weights
+  }
+}
+`;
+export const listArticleGradCaMs = `query ListArticleGradCaMs(
+  $ds_art: String
+  $version: ModelStringKeyConditionInput
+  $filter: ModelArticleGradCAMFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listArticleGradCAMs(
+    ds_art: $ds_art
+    version: $version
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      ds_art
+      version
+      weights
+    }
+    nextToken
+  }
+}
+`;
